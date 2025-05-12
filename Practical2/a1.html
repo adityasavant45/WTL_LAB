@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html,body{
+        height: 100%;
+        width: 100%;
+        
+    }
+    div{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+    h1{
+        background-color: rgb(146, 199, 216);
+    }
+    a{  
+        text-align: center;
+        width: 30%;
+        padding: 10px;
+        background-color: lightblue;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: 800;
+        text-decoration: none;
+    }
+    .links{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    a:focus{
+        background-color: seagreen;
+        width: 40%;
+        transition: all ease-in-out 0.5s;
+    }
+</style>
+<body>
+   <div>
+    <h1>About</h1>
+    <div class="links">
+    <a href="hello.html" target="abc">hello</a>    
+    <a href="resume.html" target="abc">resume</a>
+    <a href="registration.html" target="abc">registration</a>
+    <a href="selectors.html" target="abc">css selectors</a>
+    </div>
+
+   </div>
+</body>
+</html>

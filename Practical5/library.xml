@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="library.xsl"?>
+<!DOCTYPE library [
+    <!ELEMENT library (book+)>
+    <!ELEMENT book (title, author, genre, price, year, publisher)>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT author (#PCDATA)>
+    <!ELEMENT genre (#PCDATA)>
+    <!ELEMENT price (#PCDATA)>
+    <!ELEMENT year (#PCDATA)>
+    <!ELEMENT publisher (#PCDATA)>
+]>
+<library>
+    <book>
+        <title>The Great Gatsby</title>
+        <author>F. Scott Fitzgerald</author>
+        <genre>Fiction</genre>
+        <price>$10.99</price>
+        <year>1925</year>
+        <publisher>Charles Scribner's  Sons</publisher>
+    </book>
+    <book>
+        <title>1984</title>
+        <author>George Orwell</author>
+        <genre>Dystopian</genre>
+        <price>$8.99</price>
+        <year>1949</year>
+        <publisher>Secker  Warburg</publisher>
+    </book>
+    <book>
+        <title>To Kill a Mockingbird</title>
+        <author>Harper Lee</author>
+        <genre>Classic</genre>
+        <price>$12.99</price>
+        <year>1960</year>
+        <publisher>J.B. Lippincott  Co.</publisher>
+    </book>
+    <book>
+        <title>The Catcher in the Rye</title>
+        <author>J.D. Salinger</author>
+        <genre>Classic</genre>
+        <price>$9.99</price>
+        <year>1951</year>
+        <publisher>Little, Brown and Company</publisher>
+    </book>
+    <book>
+        <title>The Hobbit</title>
+        <author>J.R.R. Tolkien</author>
+        <genre>Fantasy</genre>
+        <price>$15.99</price>
+        <year>1937</year>
+        <publisher>George Allen  Unwin</publisher>
+    </book>
+</library>

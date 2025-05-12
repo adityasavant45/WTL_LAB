@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classic Calculator</title>
+  <style>
+    body {
+      background-color: #eaeaea;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calculator-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      width: 350px;
+    }
+
+    .calculator-container h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .calculator-container input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .button-group button {
+      width: 23%;
+      padding: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button-group button:hover {
+      background-color: #0056b3;
+    }
+
+    #output {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .clear-button {
+      background-color: #dc3545;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .clear-button:hover {
+      background-color: #b02a37;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator-container">
+    <h1>Classic Calculator</h1>
+    <input type="number" id="inputOne" placeholder="Enter first number" />
+    <input type="number" id="inputTwo" placeholder="Enter second number" />
+
+    <div class="button-group">
+      <button onclick="performCalculation('+')">+</button>
+      <button onclick="performCalculation('-')">-</button>
+      <button onclick="performCalculation('*')">*</button>
+      <button onclick="performCalculation('/')">÷</button>
+    </div>
+
+    <p id="output"></p>
+    <button class="clear-button" onclick="resetCalculator()">Clear</button>
+  </div>
+
+  <script>
+    function performCalculation(operator) {
+      const firstNumber = parseFloat(document.getElementById('inputOne').value);
+      const secondNumber = parseFloat(document.getElementById('inputTwo').value);
+      const resultDisplay = document.getElementById('output');
+      let result;
+
+      if (isNaN(firstNumber) || isNaN(secondNumber)) {
+        resultDisplay.textContent = "Please enter valid numbers.";
+        resultDisplay.classList.add("error");
+        return;
+      }
+
+      resultDisplay.classList.remove("error");
+
+      switch (operator) {
+        case '+':
+          result = firstNumber + secondNumber;
+          break;
+        case '-':
+          result = firstNumber - secondNumber;
+          break;
+        case '*':
+          result = firstNumber * secondNumber;
+          break;
+        case '/':
+          if (secondNumber === 0) {
+            resultDisplay.textContent = "Cannot divide by zero.";
+            resultDisplay.classList.add("error");
+            return;
+          }
+          result = firstNumber / secondNumber;
+          break;
+        default:
+          result = "Invalid operation";
+      }
+
+      resultDisplay.textContent = `Result: ${result}`;
+    }
+
+    function resetCalculator() {
+      document.getElementById('inputOne').value = '';
+      document.getElementById('inputTwo').value = '';
+      const resultDisplay = document.getElementById('output');
+      resultDisplay.textContent = '';
+      resultDisplay.classList.remove("error");
+    }
+  </script>
+
+</body>
+</html>

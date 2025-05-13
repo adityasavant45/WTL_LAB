@@ -1,16 +1,10 @@
 <?php
-session_start();
 
-if (isset($_SESSION['username'])) {
-    echo "Welcome, " . $_SESSION['username'] . " (from session)<br>";
-} elseif (isset($_COOKIE['username'])) {
-    echo "Welcome back, " . $_COOKIE['username'] . " (from cookie)<br>";
+session_start();
+if (isset($_SESSION["username"])) {
+    echo "<h2>Welcome, " . $_SESSION["username"] . "!</h2>";
+    echo "<a href='logout.php'>Logout</a>";
 } else {
-    echo "User not logged in.<br>";
-    echo "<a href='login.php'>Login</a>";
-    exit();
+    echo "You are not logged in. <a href='login.php'>Login</a>";
 }
 ?>
-
-<br>
-<a href="logout.php">Logout</a>
